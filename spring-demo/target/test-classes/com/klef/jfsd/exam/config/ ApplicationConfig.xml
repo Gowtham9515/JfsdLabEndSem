@@ -1,0 +1,34 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean Definitions -->
+    <bean id="employee" class="com.klef.jfsd.exam.model.Employee">
+        <constructor-arg value="1"/>
+        <constructor-arg value="John Doe"/>
+        <constructor-arg value="50000.0"/>
+        <constructor-arg value="true"/>
+        <constructor-arg>
+            <list>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>SQL</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="instructor" class="com.klef.jfsd.exam.model.Instructor">
+        <constructor-arg value="101"/>
+        <constructor-arg value="Dr. Smith"/>
+        <constructor-arg value="dr.smith@example.com"/>
+        <constructor-arg value="1234567890"/>
+    </bean>
+
+    <bean id="course" class="com.klef.jfsd.exam.model.Course">
+        <constructor-arg value="301"/>
+        <constructor-arg value="Spring Framework"/>
+        <constructor-arg value="3"/>
+        <constructor-arg ref="instructor"/>
+    </bean>
+</beans>
